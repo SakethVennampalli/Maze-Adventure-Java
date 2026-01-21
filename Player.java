@@ -13,6 +13,10 @@ public class Player {
     void move(int dx, int dy, Maze maze){
         int nx = x + dx;
         int ny = y + dy;
+        if(maze.grid[ny][nx] == Maze.EXIT){
+    javax.swing.JOptionPane.showMessageDialog(null,"You escaped the maze!");
+    System.exit(0);
+}
 
         if(maze.grid[ny][nx] == Maze.WALL) return;
 
